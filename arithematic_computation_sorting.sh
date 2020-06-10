@@ -1,4 +1,4 @@
-#! /bin/bash -x
+#! /bin/bash 
 echo "This problem computes different arithematic expressions and sort the results"
 read -p " enter 1st number : " a
 read -p " enter 2nd number : " b
@@ -9,5 +9,13 @@ storeResult[0]=$(($a+$b*$c))
 storeResult[1]=$(($a*$b+$c))
 storeResult[2]=$(($c+$a/$b))
 storeResult[3]=$(($a%$b+$c))
-echo "keys : " ${!storeResult[@]}
-echo "values : " ${storeResult[@]}
+echo "Dict keys : " ${!storeResult[@]}
+echo "Dict values : " ${storeResult[@]}
+declare -a array
+i=0
+while (( i<=3 ))
+do
+	array[$i]=${storeResult[$i]}
+	((i++))
+done
+echo "array values : " ${array[@]}
