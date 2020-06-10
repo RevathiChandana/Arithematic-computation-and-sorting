@@ -23,7 +23,7 @@ for (( i=o; i<=3; i++ ))
 do
 	for (( j=i+1; j<=3; j++ ))
 	do
-		if [ ${array[$i]} -lt ${array[$j]} ]
+		if [ ${array[$i]} -gt ${array[$j]} ]
 		then
 			temp=${array[$i]}
 			array[$i]=${array[$j]}
@@ -31,4 +31,4 @@ do
 		fi
 	done
 done
-echo "descending order of array : " ${array[@]}
+echo "ascending order of array : " ${array[@]}
